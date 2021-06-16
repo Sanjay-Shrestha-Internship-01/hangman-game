@@ -55,8 +55,13 @@ function handleGuess(chosenLetter) {
         mistake++;
         updateMistakes();
         checkIfGameLost();
+        updatePictures();
     }
 }
+function updatePictures(){
+    document.getElementById('hangmanPic').src ='./images/' + mistake + ".jpg";
+}
+
 function updateMistakes(){
     document.getElementById('mistake').innerHTML = mistake;
 
@@ -69,6 +74,7 @@ function checkIfGameWon(){
 function checkIfGameLost(){
     if (mistake === maxWrong){
         document.getElementById('keyboard').innerHTML = "You Lost!!!";
+        document.getElementById('wordSpotlight').innerHTML = ' The answer was: ' + answer;
     }
 }
 function reset(){
