@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Bootstrap 5 CDn-->
-    <link rel="stylesheet" href="https://www.tiktok.com/@bunuwa_08/video/6973205789615869186?sender_device=pc&sender_web_id=6900893101776602630&is_from_webapp=v1&is_copy_url=0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    />
     <title>Hangman</title>
-    
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        
+      <h1 class="text-center">Hangman</h1>
+      <div class="floatright">
+        Wrong Guesses: <span id="mistakes">0</span>of 
+        <span id="maxWrong"></span>
+      </div>
+      <div class="text-center">
+        <p>Guess the programming Language:</p>
+        <p id="wordSpotlight">The word to be guessed goes here</p>
+        <div id="keyboard"></div>
+        <button class="btn btn-info" onclick="">Reset</button>
+      </div>
     </div>
-</body>
+    <script src="./js/hangman.js"></script>
+  </body>
 </html>
