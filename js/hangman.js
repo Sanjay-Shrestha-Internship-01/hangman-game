@@ -1,28 +1,33 @@
-var programming_languages = [
-  "python",
-  "javascript",
-  "json",
-  "java",
-  "CSS",
-  "c",
-  "csharp",
-  "ruby",
-  "sql",
-  "php",
-  "kotlin",
+var categories =  [
+    ["everton", "liverpool", "swansea", "chelsea", "watford", "fulham", "arsenal"],
+    ["python",
+    "javascript",
+    "json",
+    "java",
+    "CSS",
+    "c",
+    "csharp",
+    "ruby",
+    "sql",
+    "php",
+    "kotlin"],
+    ["kathmandu", "delhi", "dhaka", "beijing", "london","berlin","tokyo","amsterdam","doha","moscow"]
 ];
 
+var chosenCategory; 
 let answer = '';
 let maxWrong = 6;
 let mistake = 0;
 let guessed = [];
 let wordStatus = null;
 function randomWord() {
-  answer =
-    programming_languages[
-      Math.floor(Math.random() * programming_languages.length)
+    chosenCategory = categories[Math.floor(Math.random() * categories.length)];
+    answer =
+    chosenCategory[
+      Math.floor(Math.random() * chosenCategory.length)
     ];
-
+    selectCat();
+    
 }
 
 function generateButtons(){
@@ -50,6 +55,7 @@ function handleGuess(chosenLetter) {
     
     if(answer.indexOf(chosenLetter) >= 0){
         guessWord();
+        
         checkIfGameWon();
     } else if(answer.indexOf(chosenLetter) === -1) {
         mistake++;
@@ -86,6 +92,15 @@ function reset(){
     updateMistakes();
     generateButtons();
 }
+var selectCat = function () {
+    if (chosenCategory === categories[0]) {
+        document.getElementById('catagoryName').innerHTML = "The Chosen Category Is Premier League Football Teams";
+    } else if (chosenCategory === categories[1]) {
+       document.getElementById('catagoryName').innerHTML = "The Chosen Category Is Progamming Language";
+    } else if (chosenCategory === categories[2]) {
+       document.getElementById('catagoryName').innerHTML = "The Chosen Category Is Capital Cities";
+    }
+  }
 randomWord();
 generateButtons();
 guessWord();
